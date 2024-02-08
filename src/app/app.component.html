@@ -6,15 +6,21 @@
     <!-- User Filter Box -->
     <div class="filter-box">
       <h2>User Filter</h2>
-      <input type="text" placeholder="Filter Users" (input)="filterUsers($event)" />
-
+      <input
+        type="text"
+        placeholder="Filter Users"
+        (input)="filterUsers($event)"
+      />
     </div>
 
     <!-- Department Filter Box -->
     <div class="filter-box">
       <h2>Department Filter</h2>
-      <input type="text" placeholder="Filter Departments" (input)="filterDepartments($event)" />
-
+      <input
+        type="text"
+        placeholder="Filter Departments"
+        (input)="filterDepartments($event)"
+      />
     </div>
   </div>
 
@@ -22,16 +28,12 @@
   <table>
     <thead>
       <tr>
-        <th>Finance Department</th>
-        <th>HR Department</th>
-        <th>Manufacturing Department</th>
-        <th>Service Department</th>
-        <th>Delivery Department</th>
+        <th *ngFor="let col of filteredDepartments">{{ col }}</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td *ngFor="let department of departments">
+        <td *ngFor="let department of filteredDepartments">
           <div *ngFor="let user of usersFilteredByDepartment(department)">
             <p>{{ user.name }}</p>
           </div>

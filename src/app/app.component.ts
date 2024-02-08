@@ -333,10 +333,8 @@ export class AppComponent implements OnInit {
   filterUsers(event: Event): void {
     const target = event.target as HTMLInputElement;
     const keyword = target.value.toLowerCase();
-    this.filteredUsers = this.users.filter(
-      (user) =>
-        user.name.toLowerCase().includes(keyword) ||
-        user.department.toLowerCase().includes(keyword)
+    this.filteredUsers = this.users.filter((user) =>
+      user.name.toLowerCase().includes(keyword)
     );
   }
 
