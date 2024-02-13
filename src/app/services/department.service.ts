@@ -1,3 +1,4 @@
+import { Department } from "../shared/models/department.model";
 import { User } from "../shared/models/user.model";
 
 const users: User[] = [
@@ -306,7 +307,7 @@ const departmentNames: string[] = [
     'Service',
     'Delivery',
   ];
-export const getDepartments = ()=>{
+export const getDepartments = (): Department[]=>{
     return departmentNames.map((departmentName)=>{
         return {
           name: departmentName,
