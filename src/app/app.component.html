@@ -4,41 +4,10 @@
   </header>
   <div class="container">
     <!-- User Filter Box -->
-    <div class="filter-box">
-      <h2>User Filter</h2>
-      <input
-        type="text"
-        placeholder="Filter Users"
-        (input)="filterUsers($event)"
-      />
-    </div>
-
+    <app-user-filter (onSearchStringChanged)="filterUsers($event)"></app-user-filter>
     <!-- Department Filter Box -->
-    <div class="filter-box">
-      <h2>Department Filter</h2>
-      <input
-        type="text"
-        placeholder="Filter Departments"
-        (input)="filterDepartments($event)"
-      />
-    </div>
+    <app-department-filter (onSearchStringChanged)="filterDepartments($event)"></app-department-filter>
   </div>
-
   <!-- Table for Departments -->
-  <table>
-    <thead>
-      <tr>
-        <th *ngFor="let col of filteredDepartments">{{ col }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td *ngFor="let department of filteredDepartments">
-          <div *ngFor="let user of usersFilteredByDepartment(department)">
-            <p>{{ user.name }}</p>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <app-department [departments]="filteredDepartments" ></app-department>
 </div>

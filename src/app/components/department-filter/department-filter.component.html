@@ -1,0 +1,9 @@
+<div class="filter-box">
+    <h2>Department Filter</h2>
+    <input
+      [ngModel]="searchString"
+      type="text"
+      placeholder="Filter Departments"
+      (ngModelChange)="filterDepartments($event)"
+    />
+</div>

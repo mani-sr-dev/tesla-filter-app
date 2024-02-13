@@ -1,0 +1,18 @@
+table {
+    /* Add styling for the table */
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    /* Add styling for table cells */
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    /* Add styling for table headers */
+    background-color: #f2f2f2;
+  }

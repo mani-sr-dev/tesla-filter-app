@@ -1,0 +1,9 @@
+<div class="filter-box">
+    <h2>User Filter</h2>
+    <input
+    [ngModel]="searchString"
+    type="text"
+    placeholder="Filter users"
+    (ngModelChange)="filterUsers($event)"
+    />
+</div>

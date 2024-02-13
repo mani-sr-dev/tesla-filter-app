@@ -1,0 +1,16 @@
+<table>
+    <thead>
+      <tr>
+        <th *ngFor="let department of departments">{{ department.name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let department of departments">
+          <div *ngFor="let user of department.users">
+           <app-user [user]="user"></app-user>
+          </div> 
+        </td>
+      </tr>
+    </tbody>
+</table>
